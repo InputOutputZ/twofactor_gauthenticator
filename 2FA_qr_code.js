@@ -9,7 +9,7 @@ if (window.rcmail) {
 		    height: 200,
 		    colorDark : rcmail.env.qr_image_colour,
 		    colorLight : "#ffffff",
-		    correctLevel : QRCode.CorrectLevel.M	// like charts.googleapis.com
+		    correctLevel : QRCode.CorrectLevel.M	//like charts.googleapis.com
 		});
 
 	$('#2FA_qr_code').prop('title', '');	// enjoy the silence (qrcode.js uses text to set title)
