@@ -508,7 +508,7 @@ class twofactor_gauthenticator extends rcube_plugin
                 $user_agent = hash_hmac('md5', filter_input(INPUT_SERVER, 'USER_AGENT') ?: "\0\0\0\0\0", $rcmail->config->get('des_key'));
                 $key = hash_hmac('sha256', implode("\2\1\2", array($rcmail->user->data['username'], $this->__getSecret())), $rcmail->config->get('des_key'), TRUE);
                 $iv = hash_hmac('md5', implode("\3\2\3", array($rcmail->user->data['username'], $this->__getSecret())), $rcmail->config->get('des_key'), TRUE);
-                $name = hash_hmac('md5', $rcmail->user->data['username'], $rcmail->config->get('cookie_des_key'));
+                $name = hash_hmac('md5', $rcmail->user->data['username'], $rcmail->config->get('des_key'));
 
                 if ($set) {
                 	$daysInSeconds = intval($rcmail->config->get('save_device_xdays',true));
